@@ -59,7 +59,7 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">Click on the logos to learn more</p>
-      <p>Add by xinzi 2025-9-24</p>
+      <p>Add by xinzi 2025-9-24 地板砖桭</p>
     </>
   );
 }
