@@ -11,8 +11,8 @@ function App() {
   const [count, setCount] = useState(0);
   const [name, setName] = useState();
   function fetch(request: Request, env: Env): Promise<Response> {
-       const { results } = await env.DB.prepare('SELECT name FROM tbuser where id =1').all();
-       setName(Response.json(results))
+       result :string  = await env.DB.prepare('SELECT name FROM tbuser where id =1').all();
+       setName(result)
     return Response.json(results);
   }
 
