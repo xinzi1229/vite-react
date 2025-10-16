@@ -9,7 +9,12 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [name, setName] = useState("unknown");
+  const [name, setName] = useState();
+  function fetch(request: Request, env: Env): Promise<Response> {
+       const { results } = await env.DB.prepare('SELECT * FROM tbuser').all();
+       setName(Response.json(results))
+    return Response.json(results);
+  }
 
   return (
     <>
@@ -59,7 +64,7 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">Click on the logos to learn more</p>
-      <p>Add by xinzi 2025-9-24 地板砖桭</p>
+      <p>Add by xinzi 2025-9-24 1</p>
     </>
   );
 }
