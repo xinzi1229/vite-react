@@ -4,5 +4,9 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" },
     { "path": "./tsconfig.worker.json" }
-  ]
+    ],
+    "compilerOptions": {
+    "noUnusedLocals": false, // 关闭未使用局部变量的检查
+    "noUnusedParameters": false // 关闭未使用参数的检查
+  }
 }
