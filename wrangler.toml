@@ -1,0 +1,13 @@
+name = "your-worker-name"
+main = "worker/index.ts"
+compatibility_date = "2025-11-10"
+
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# 添加这个配置块
+[[d1_databases]]
+binding = "DB" # 🚨 这个 "DB" 必须和代码中的 c.env.DB 名字一致！
+database_name = "dbbinding" # 你创建的数据库名称
+database_id = "c5ec5bd8-69c4-41af-b4fc-ef0c1853d9e3" # Wrangler 提供的数据库 ID
