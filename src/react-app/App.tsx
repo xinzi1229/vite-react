@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react'; // 1. 导入需要的 hooks
 
 // 2. 定义 User 类型（最佳实践）
+interface User {
+  id: number;
+  name: string;
+  phone: string;
+}
 
 function App() {
   // 3. 创建 state 来存储用户数据、加载状态和错误信息
-  const [users, setUsers] = useState<any>([]);
+  const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -19,7 +24,7 @@ function App() {
         }
         const data = await response.json();
         setUsers(data.users); // 假设 API 返回 { users: [...] }
-      } catch (err) {
+      } catch (err: any) {
         setError(err.message);
       } finally {
         setLoading(false);
