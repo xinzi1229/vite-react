@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // 1. 导入需要的 hooks
+import  { useState, useEffect } from 'react'; // 1. 导入需要的 hooks
 
 // 2. 定义 User 类型（最佳实践）
 interface User {
