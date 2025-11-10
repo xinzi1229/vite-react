@@ -5,7 +5,7 @@ import { Container, Row, Col, Nav, Navbar, Table, Button, Form, Modal } from 're
 interface User {
   id: number;
   name: string;
-  phone: string;
+  email: string;
   role: string;
 }
 
@@ -59,14 +59,14 @@ function App() {
       setCurrentUser(user);
       setFormData({
         name: user.name,
-        phone: user.phone,
+        email: user.email,
         role: user.role
       });
     } else {
       setIsEditing(false);
       setFormData({
         name: '',
-        phone: '',
+        email: '',
         role: ''
       });
     }
@@ -79,7 +79,7 @@ function App() {
     setCurrentUser(null);
     setFormData({
       name: '',
-      phone: '',
+      email: '',
       role: ''
     });
   };
@@ -149,6 +149,7 @@ function App() {
 
           {/* Main Content */}
           <Col md={9} lg={10} className="p-4">
+         
             <div className="d-flex justify-content-between align-items-center mb-4">
               <h2>User Management</h2>
               <Button variant="primary" onClick={() => openModal()}>
@@ -172,7 +173,7 @@ function App() {
                   <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>phone</th>
+                    <th>Email</th>
                     <th>Role</th>
                     <th>Actions</th>
                   </tr>
@@ -183,7 +184,7 @@ function App() {
                       <tr key={user.id}>
                         <td>{user.id}</td>
                         <td>{user.name}</td>
-                        <td>{user.phone}</td>
+                        <td>{user.email}</td>
                         <td>{user.role}</td>
                         <td>
                           <Button 
@@ -235,13 +236,13 @@ function App() {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formphone">
-              <Form.Label>phone</Form.Label>
+            <Form.Group className="mb-3" controlId="formEmail">
+              <Form.Label>Email</Form.Label>
               <Form.Control
-                type="phone"
-                placeholder="Enter phone"
-                name="phone"
-                value={formData.phone}
+                type="email"
+                placeholder="Enter email"
+                name="email"
+                value={formData.email}
                 onChange={handleInputChange}
                 required
               />
